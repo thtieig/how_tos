@@ -2,13 +2,16 @@
 
 set -e
 
-# Configuration
-REPLACEMENT_NAME="YourName"
-REPLACEMENT_EMAIL="dev@users.noreply.github.com"
-REPOS_FILE="repos.txt"
-EMAILS_FILE="emails.txt"
-WORK_DIR="sanitise_workdir"
-LOG_FILE="sanitisation_log.txt"
+# Load configuration if it exists
+[[ -f "config.sh" ]] && source "config.sh"
+
+# Configuration (with defaults, can be overridden by config.sh)
+REPLACEMENT_NAME="${REPLACEMENT_NAME:-Noname}"
+REPLACEMENT_EMAIL="${REPLACEMENT_EMAIL:-dev@users.noreply.github.com}"
+REPOS_FILE="${REPOS_FILE:-repos.txt}"
+EMAILS_FILE="${EMAILS_FILE:-emails.txt}"
+WORK_DIR="${WORK_DIR:-sanitise_workdir}"
+LOG_FILE="${LOG_FILE:-sanitisation_log.txt}"
 
 # Colours for output
 RED='\033[0;31m'

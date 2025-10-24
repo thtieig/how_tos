@@ -1,0 +1,29 @@
+#!/bin/bash
+# Configuration file for sanitise_repos.sh
+# Copy this file to config.sh and modify the values as needed
+# The script will automatically load config.sh if it exists
+
+# Replacement identity for author/committer emails
+# This is the name and email that will replace the orig inal emails being sanitised
+REPLACEMENT_NAME="Your Name"
+REPLACEMENT_EMAIL="your.email@example.com"
+
+# Input/output files
+# Path to file containing repository URLs (one per line)
+REPOS_FILE="repos.txt"
+# Path to file containing emails to sanitise (one per line)
+EMAILS_FILE="emails.txt"
+
+# Working directory for temporary files
+# This directory will be created/removed during sanitisation
+WORK_DIR="sanitise_workdir"
+
+# Log file path
+# Will contain detailed output of the sanitisation process
+LOG_FILE="sanitisation_log.txt"
+
+# Auto-approve mode (optional)
+# Set to 1 to automatically push repositories without confirmation prompts
+# Set to 0 (default) to prompt before pushing each repository
+# Can also be set via environment variable: export AUTO_APPROVE=1
+AUTO_APPROVE=${AUTO_APPROVE:-0}
