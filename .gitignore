@@ -1,0 +1,12 @@
+# Ignore the specific directory
+commit_sanitiser/sanitise_workdir/
+
+# Ignore all .txt files inside commit_sanitiser and its subfolders
+commit_sanitiser/**/*.txt
+
+# Ignore configuration file (use config.sh.example as template)
+commit_sanitiser/config.sh
+
+
+# Extras
+TMP/
